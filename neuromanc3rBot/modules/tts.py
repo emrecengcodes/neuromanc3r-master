@@ -12,7 +12,15 @@ import json
 import urllib.request
 import urllib.parse
 import requests
-from neuromanc3rBot import DEV_USERS, OWNER_ID, DRAGONS, DEMONS, WOLVES, dispatcher, updater
+from neuromanc3rBot import (
+    DEV_USERS,
+    OWNER_ID,
+    DRAGONS,
+    DEMONS,
+    WOLVES,
+    dispatcher,
+    updater,
+)
 from neuromanc3rBot.__main__ import STATS, TOKEN, USER_INFO
 from neuromanc3rBot.modules.disable import DisableAbleCommandHandler
 from neuromanc3rBot.modules.helper_funcs.filters import CustomFilters
