@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
-from AstrakoBot.modules.helper_funcs.msg_types import Types
-from AstrakoBot.modules.sql import BASE, SESSION
+from neuromanc3rBot.modules.helper_funcs.msg_types import Types
+from neuromanc3rBot.modules.sql import BASE, SESSION
 
 
 class CustomFilters(BASE):
