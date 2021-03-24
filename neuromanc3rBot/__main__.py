@@ -98,12 +98,9 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-neuromanc3rBot_IMG = "https://i.imgur.com/1oah5E2.jpg"
+neuromanc3rBot_IMG = "https://i.imgur.com/izgPQeA.jpg"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-neuromanc3rBot is hosted on its own server and doesn't require any donations as of now but \
-You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+DONATE_STRING = """Heya, ben dilenci değilim"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -223,22 +220,28 @@ def start(update: Update, context: CallbackContext):
                                 ),
                             )
                         ],
+                         [
+                            InlineKeyboardButton(
+                                text="Developer",
+                                url="https://t.me/quiong",
+                            )
+                        ],
                         [
                             InlineKeyboardButton(
                                 text="Support Group",
-                                url=f"https://t.me/neuromanc3rBotSupport",
+                                url=f"https://t.me/emreceng",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
                                 text="Getting started guide",
-                                url="https://t.me/OnePunchUpdates/29",
+                                url="https://t.me/neuromanc3rupdates/1",
                             )
                         ],
                         [
                             InlineKeyboardButton(
                                 text="Source code",
-                                url="https://github.com/Astrako/neuromanc3rBot",
+                                url="https://github.com/neuromanc3r-master/neuromanc3rBot",
                             )
                         ],
                     ]
