@@ -45,3 +45,6 @@ youtube-search-python
 gtts
 pretty_errors
 tswift
+TgCrypto
+https://github.com/CW4RR10R/pyrogram/archive/asyncio.zip
+git+https://github.com/ytdl-org/youtube-dl
