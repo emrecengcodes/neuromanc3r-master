@@ -45,4 +45,3 @@ youtube-search-python
 gtts
 pretty_errors
 tswift
-git+https://github.com/ytdl-org/youtube-dl
