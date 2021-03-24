@@ -12,9 +12,9 @@ StartTime = time.time()
 # enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
-    level=logging.INFO,
-)
+    handlers=[logging.FileHandler("log.txt"),
+              logging.StreamHandler()],
+    level=logging.INFO,)
 
 LOGGER = logging.getLogger(__name__)
 
@@ -33,7 +33,8 @@ if ENV:
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
     except ValueError:
-        raise Exception("Your OWNER_ID env variable is not a valid integer.")
+        raise Exception(
+            "Your OWNER_ID env variable is not a valid integer.")
 
     JOIN_LOGGER = os.environ.get("JOIN_LOGGER", None)
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
@@ -42,7 +43,8 @@ if ENV:
         DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
         DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "").split())
     except ValueError:
-        raise Exception("Your sudo or dev users list does not contain valid integers.")
+        raise Exception(
+            "Your sudo or dev users list does not contain valid integers.")
 
     try:
         DEMONS = set(int(x) for x in os.environ.get("DEMONS", "").split())
@@ -117,7 +119,10 @@ else:
         WOLVES = set(int(x) for x in Config.WOLVES or [])
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
-
+    try:
+        TIGERS = set(int(x) for x in Config.TIGERS or [])
+    except ValueError:
+        
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
     EVENT_LOGS = Config.EVENT_LOGS
@@ -159,11 +164,7 @@ if not SPAMWATCH_API:
     sw = None
     LOGGER.warning("SpamWatch API key missing! recheck your config.")
 else:
-    try:
-        sw = spamwatch.Client(SPAMWATCH_API)
-    except:
-        sw = None
-        LOGGER.warning("Can't connect to SpamWatch!")
+    sw = spamwatch.Client(SPAMWATCH_API)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("neuromanc3rBot", API_ID, API_HASH)
